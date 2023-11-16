@@ -10,7 +10,7 @@ public class DestroyOnCollision : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        
+
         if (collision.gameObject.CompareTag(targetTag) && !plantGrowing)
         {
             Debug.Log("Collision occurred");
@@ -18,9 +18,9 @@ public class DestroyOnCollision : MonoBehaviour
             plantGrowing = true;
 
             // Instantiate the flower prefab at the same position as the seed
-            
+
             GameObject flower = Instantiate(flowerPrefab, transform.position, Quaternion.identity);
-            // flower.GetComponent<plantgrowth>().enabled = true; // Enable
+          
             flower.GetComponent<plantgrowth>().Growth();
             Debug.Log("Flower instantiated");
         }

@@ -24,24 +24,24 @@ public class plantgrowth : MonoBehaviour
 
     public void Growth()
     {
-        if (currentProgression != maxGrowth)
-        {
-            transform.GetChild(currentProgression).gameObject.SetActive(true);
-        }
 
-        if (currentProgression > 0 && currentProgression < maxGrowth)
-        {
-            transform.GetChild(currentProgression - 1).gameObject.SetActive(false);
-        }
+        // Deactivate the current stage
+        transform.GetChild(currentProgression).gameObject.SetActive(false);
 
-        if (currentProgression < maxGrowth)
+        // Increment currentProgression
+        currentProgression++;
+
+        // Check if we need to loop back to the first stage
+        if (currentProgression >= maxGrowth)
         {
-            currentProgression++;
-        }
-        else
-        {
-            // Reset currentProgression to 0 when it reaches the maximum growth
             currentProgression = 0;
         }
+
+        // Activate the new current stage
+        transform.GetChild(currentProgression).gameObject.SetActive(true);
+
+
+
     }
+
 }
