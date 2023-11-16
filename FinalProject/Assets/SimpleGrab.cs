@@ -7,10 +7,13 @@ using Valve.VR.InteractionSystem;
 public class SimpleGrab : MonoBehaviour
 {
     private Interactable interactable;
+
+
     // Start is called before the first frame update
     void Start()
     {
         interactable = GetComponent<Interactable>();
+        
     }
 
     private void OnHandHoverBegin(Hand hand)
@@ -32,12 +35,14 @@ public class SimpleGrab : MonoBehaviour
             hand.AttachObject(gameObject, grabType);
             hand.HoverLock(interactable);
             hand.HideGrabHint();
+
         }
         //RELEASE
         else if (isGrabEnding)
         {
             hand.DetachObject(gameObject);
             hand.HoverUnlock(interactable);
+
         }
     }
 }
