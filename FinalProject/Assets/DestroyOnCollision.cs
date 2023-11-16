@@ -4,17 +4,25 @@ using UnityEngine;
 
 public class DestroyOnCollision : MonoBehaviour
 {
-    // Define the tag of the object you want to collide with (e.g., "Plane")
     public string targetTag = "grid";
+    public GameObject flowerPrefab;
+    private bool plantGrowing = false;
 
-    // Called when a collision occurs
     void OnCollisionEnter(Collision collision)
     {
-        // Check if the collided object has the specified tag
-        if (collision.gameObject.CompareTag(targetTag))
+        
+        if (collision.gameObject.CompareTag(targetTag) && !plantGrowing)
         {
-            // Destroy the game object this script is attached to
+            Debug.Log("Collision occurred");
             Destroy(gameObject);
+            plantGrowing = true;
+
+            // Instantiate the flower prefab at the same position as the seed
+            
+            GameObject flower = Instantiate(flowerPrefab, transform.position, Quaternion.identity);
+            // flower.GetComponent<plantgrowth>().enabled = true; // Enable
+            flower.GetComponent<plantgrowth>().Growth();
+            Debug.Log("Flower instantiated");
         }
     }
 }
