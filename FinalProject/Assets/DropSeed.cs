@@ -8,28 +8,28 @@ public class DropSeed : MonoBehaviour
 {
   
     public GameObject hitted;
-   // public GameObject col;
+  
 
-    void OnTriggerEnter(Collider objectName)
+    void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Entered collision with " + objectName.gameObject.name);
+        Debug.Log("Entered collision");
       
-       // if (objectName.gameObject.name == "Wooden_Box")
-       // {
+       if (other.tag == "Doritos Organic_1")
+       {
             Destroy(hitted);
-      //  }
+       }
            
     }
 
     // Gets called during the stay of object inside the collider area
-    void OnTriggerStay(Collider objectName)
+    void OnTriggerStay(Collider other)
     {
-        Debug.Log("Colliding with " + objectName.gameObject.name);
+        Debug.Log("Colliding" );
     }
 
     // Gets called when the object exits the collider area
-    void OnTriggerExit(Collider objectName)
+    void OnTriggerExit(Collider other)
     {
-        Debug.Log("Exited collision with " + objectName.gameObject.name);
+        Debug.Log("Exited collision with");
     }
 }
