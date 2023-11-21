@@ -290,6 +290,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 59054367239581167, guid: b7c94f4796fb93e4ba20111981d9800c, type: 3}
   m_PrefabInstance: {fileID: 59054367785821413}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &596576525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596576522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86bbff2134021c54996ef2bad06f1751, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenGrowths: 2
+  maxGrowth: 4
 --- !u!1001 &622354824
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1420,7 +1434,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.10501978, y: 0.14575495, z: 0.03485582}
   m_Center: {x: 0.0062059835, y: -0.03378973, z: 0.0014461894}
---- !u!114 &1238838206
+--- !u!114 &1238838210
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1429,11 +1443,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1238838191}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bab73fb8359f784eaedbdee1705da9c, type: 3}
+  m_Script: {fileID: 11500000, guid: 88a73cfa094026e499af53b1d5db34cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: grid
   flowerPrefab: {fileID: 596576522}
+  plantGrowing: 0
 --- !u!1 &1281340443
 GameObject:
   m_ObjectHideFlags: 0
@@ -2246,31 +2261,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 59054367239581166, guid: b7c94f4796fb93e4ba20111981d9800c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 59054367239581166, guid: b7c94f4796fb93e4ba20111981d9800c, type: 3}
+      propertyPath: DestroyOnCollisionReference
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 59054367239581167, guid: b7c94f4796fb93e4ba20111981d9800c, type: 3}
       propertyPath: m_Name
       value: flower
       objectReference: {fileID: 0}
     - target: {fileID: 530145882899612546, guid: b7c94f4796fb93e4ba20111981d9800c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4119999
+      value: 0.5930002
       objectReference: {fileID: 0}
     - target: {fileID: 530145883009222320, guid: b7c94f4796fb93e4ba20111981d9800c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.612
+      value: 0.7930003
       objectReference: {fileID: 0}
     - target: {fileID: 530145883329420233, guid: b7c94f4796fb93e4ba20111981d9800c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1919998
+      value: 1.373
       objectReference: {fileID: 0}
     - target: {fileID: 530145883413586755, guid: b7c94f4796fb93e4ba20111981d9800c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.526
+      value: -0.34499973
       objectReference: {fileID: 0}
     - target: {fileID: 869375545646840313, guid: b7c94f4796fb93e4ba20111981d9800c, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 59054367239581166, guid: b7c94f4796fb93e4ba20111981d9800c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b7c94f4796fb93e4ba20111981d9800c, type: 3}
 --- !u!33 &948259263781753248
 MeshFilter:
