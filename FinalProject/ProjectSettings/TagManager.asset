@@ -11,6 +11,7 @@ TagManager:
   - Tool
   - Flower1
   - grid2
+  - Flower2
   layers:
   - Default
   - TransparentFX
