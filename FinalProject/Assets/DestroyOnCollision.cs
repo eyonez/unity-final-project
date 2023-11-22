@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DestroyOnCollision : MonoBehaviour
 {
-    public string targetTag = "grid";
+    public string targetTag;
     public GameObject flowerPrefab;
     public bool plantGrowing = false;
 

@@ -25,10 +25,10 @@ public class FlowerCounter : MonoBehaviour
             plantGrowth flower1Script = flower1.GetComponent<plantGrowth>();
 
             // Debug log to check the value of currentProgression
-            //Debug.Log("currentProgression: " + (flower1Script != null ? flower1Script.currentProgression.ToString() : "No plantGrowth script"));
+            Debug.Log("currentProgression: " + (flower1Script != null ? flower1Script.currentProgression.ToString() : "No plantGrowth script"));
 
             // Check if the flower is in stage 4
-            if (flower1Script != null && flower1Script.currentProgression == 3)
+            if (flower1Script != null && flower1Script.currentProgression == 4)
             {
                 flower1Count++;
             }
