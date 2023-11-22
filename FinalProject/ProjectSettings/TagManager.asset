@@ -8,7 +8,7 @@ TagManager:
   - FxTemporaire
   - grid
   - Fire
-  - Flower1
+  - Tool
   layers:
   - Default
   - TransparentFX
