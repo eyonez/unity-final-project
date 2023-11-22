@@ -7,6 +7,8 @@ TagManager:
   - projectile
   - FxTemporaire
   - grid
+  - Fire
+  - Flower1
   layers:
   - Default
   - TransparentFX

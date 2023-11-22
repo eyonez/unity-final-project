@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class plantGrowth : MonoBehaviour
 {
-    private int currentProgression = 0;
+    public int currentProgression = 0;
     public int timeBetweenGrowths;
     public int maxGrowth;
 
@@ -25,7 +25,7 @@ public class plantGrowth : MonoBehaviour
         {
             // Loop the Growth() function
             Growth();
-            Debug.Log("Growth called");
+            //Debug.Log("Growth called");
 
             // Reset the flag after handling the growth logic
             startGrowth = false;
@@ -45,7 +45,7 @@ public class plantGrowth : MonoBehaviour
         {
             // Loop the Growth() function
             Growth();
-            Debug.Log("Growth called");
+            //Debug.Log("Growth called");
 
             // Wait for the specified time before the next growth
             yield return new WaitForSeconds(timeBetweenGrowths);

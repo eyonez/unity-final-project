@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestoryOnCollision : MonoBehaviour
+public class DestroyOnCollision : MonoBehaviour
 {
     public string targetTag = "grid";
     public GameObject flowerPrefab;
@@ -22,7 +22,7 @@ public class DestoryOnCollision : MonoBehaviour
             flower.GetComponent<plantGrowth>().enabled = true;
             flower.GetComponent<plantGrowth>().StartGrowth2();
 
-            Debug.Log("Flower instantiated");
+            //Debug.Log("Flower instantiated");
         }
     }
 }
