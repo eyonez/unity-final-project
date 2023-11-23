@@ -5,25 +5,25 @@ using UnityEngine;
 public class FlashlightInteraction : MonoBehaviour 
 {
     public Transform hitbox; //this script goes on the hitbox, which should be a trigger
-    public GameObject plant;
+    //public GameObject plant;
 
-    private bool flashlightColliding = false;
+    public bool flashlightColliding = false;
 
     // Update is called once per frame
     void Update()
     {
-        if (flashlightColliding)
-        {
+        //if (flashlightColliding)
+        //{
             //******animate plant growth here******
-        }
-        else
-        {
+        //}
+        //else
+        //{
         
-        }
+        //}
 
     }
 
-    public void StopGrowth() { flashlightColliding = false; }
+    //public void StopGrowth() { flashlightColliding = false; }
     public void GrowPlant() { flashlightColliding = true; }
 
     private void OnTriggerEnter(Collider other)
@@ -32,6 +32,9 @@ public class FlashlightInteraction : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Tool") { StopGrowth(); }
+        if (other.tag == "Tool") {
+            //StopGrowth();
+            GrowPlant();
+        }
     }
 }

@@ -23,7 +23,7 @@ public class Rain : MonoBehaviour
         // Check if flower2Count is more than 5 before activating Rain
         if (flowerCounter != null)
         {
-            Debug.Log("flower2Count: " + flowerCounter.flower2Count);  // Check the flower2Count value
+            //Debug.Log("flower2Count: " + flowerCounter.flower2Count);  // Check the flower2Count value
 
             if (flowerCounter.flower2Count >= 5)
             {
