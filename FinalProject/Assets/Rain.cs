@@ -25,8 +25,7 @@ public class Rain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Add to timer
-        secsToRain -= Time.deltaTime;
+        
 
         // Check if flower2Count is more than 5 before activating Rain
         if (flowerCounter != null)
@@ -35,6 +34,9 @@ public class Rain : MonoBehaviour
 
             if (flowerCounter.flower2Count >= 5 && !hasRained)
             {
+                // Add to timer
+                secsToRain -= Time.deltaTime;
+
                 Rain_Particle.gameObject.SetActive(true);
                 if (secsToRain <= 15)
                 {
