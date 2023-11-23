@@ -775,6 +775,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Rain_Particle: {fileID: 429430462}
+  hasRained: 0
+  secsToRain: 0
 --- !u!1001 &503055240
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1041,9 +1043,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86bbff2134021c54996ef2bad06f1751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentProgression: 0
-  timeBetweenGrowths: 2
-  maxGrowth: 5
 --- !u!4 &596576524 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 59054367239581161, guid: b7c94f4796fb93e4ba20111981d9800c, type: 3}
@@ -1391,7 +1390,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.1660378, b: 0.9953362, a: 1}
   m_Intensity: 0.5
-  m_Range: 0.1
+  m_Range: 0.05
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -2494,7 +2493,7 @@ Light:
   m_InnerSpotAngle: 21
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -2694,9 +2693,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86bbff2134021c54996ef2bad06f1751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentProgression: 0
-  timeBetweenGrowths: 2
-  maxGrowth: 5
 --- !u!1 &1473681694 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3779745573541866595, guid: c1b765f7ca9141348910fb46c9f9a3a9, type: 3}
