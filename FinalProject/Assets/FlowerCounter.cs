@@ -41,7 +41,7 @@ public class FlowerCounter : MonoBehaviour
         // Reset flower1Count at the beginning of each frame
         flower2Count = 0;
 
-        // Find all GameObjects with the "Flower1" tag
+        // Find all GameObjects with the "Flower2" tag
         GameObject[] flowers2 = GameObject.FindGameObjectsWithTag("Flower2");
 
         foreach (GameObject flower2 in flowers2)
@@ -54,6 +54,8 @@ public class FlowerCounter : MonoBehaviour
                 flower2Count++;
             }
         }
+
+        //Debug.Log("flower2Count: " + flower2Count);
     }
 
 

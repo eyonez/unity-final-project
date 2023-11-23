@@ -6,11 +6,12 @@ public class Rain : MonoBehaviour
 {
 
     private FlowerCounter flowerCounter;
+    public GameObject Rain_Particle;
 
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.SetActive(false);
+        Rain_Particle.gameObject.SetActive(false);
 
         // Find and store reference to FlowerCounter script
         flowerCounter = FindObjectOfType<FlowerCounter>();
@@ -20,9 +21,14 @@ public class Rain : MonoBehaviour
     void Update()
     {
         // Check if flower2Count is more than 5 before activating Rain
-        if (flowerCounter != null && flowerCounter.flower2Count >= 5)
+        if (flowerCounter != null)
         {
-            gameObject.SetActive(true);
+            Debug.Log("flower2Count: " + flowerCounter.flower2Count);  // Check the flower2Count value
+
+            if (flowerCounter.flower2Count >= 5)
+            {
+                Rain_Particle.gameObject.SetActive(true);
+            }
         }
     }
 }
