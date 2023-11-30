@@ -2,39 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlashlightInteraction : MonoBehaviour 
+public class FlashlightInteraction : MonoBehaviour
 {
-    public Transform hitbox; //this script goes on the hitbox, which should be a trigger
-    //public GameObject plant;
+    private bool isCollisionDetected = false; // Flag to track collision detection
+    public GameObject flashlight;
+    public GameObject hiddenBox;
+    public plantGrowth plantGrowthScript;
 
-    public bool flashlightColliding = false;
+    void Start()
+    {
+        // Initially, the flower should not be growing
+        plantGrowthScript.StopGrowth();
+    }
 
-    // Update is called once per frame
     void Update()
     {
-        //if (flashlightColliding)
-        //{
-            //******animate plant growth here******
-        //}
-        //else
-        //{
-        
-        //}
+        // Check if the flashlight hits the hidden box
+        if (!isCollisionDetected && flashlight.GetComponent<Collider>().bounds.Intersects(hiddenBox.GetComponent<Collider>().bounds))
+        {
+            // Reset growth for the new flower
+            plantGrowthScript.StopGrowth();
 
-    }
-
-    //public void StopGrowth() { flashlightColliding = false; }
-    public void GrowPlant() { flashlightColliding = true; }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Tool") { GrowPlant(); Debug.Log("Colliding"); } //make sure the flashlight has the 'Tool' tag
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Tool") {
-            //StopGrowth();
-            GrowPlant();
+            // Start growing from the current stage
+            plantGrowthScript.StartGrowth();
+            isCollisionDetected = true;
         }
     }
 }
+

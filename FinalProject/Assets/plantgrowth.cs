@@ -8,7 +8,7 @@ public class plantGrowth : MonoBehaviour
     public int timeBetweenGrowths;
     public int maxGrowth;
 
-    private bool startGrowth = false;
+    private bool isGrowing = false; // Add a flag to control growth
 
     void Start()
     {
@@ -21,27 +21,24 @@ public class plantGrowth : MonoBehaviour
 
     void Update()
     {
-        if (startGrowth)
+        if (isGrowing)
         {
             // Loop the Growth() function
             Growth();
-            //Debug.Log("Growth called");
-
-            // Reset the flag after handling the growth logic
-            startGrowth = false;
         }
     }
 
     // Public method to start the growth process
     public void StartGrowth()
     {
-        startGrowth = true;
+        isGrowing = true;
+        StartCoroutine(GrowthCoroutine());
     }
 
     // Coroutine for controlled growth
     public IEnumerator GrowthCoroutine()
     {
-        while (true)
+        while (isGrowing && currentProgression < maxGrowth)
         {
             // Loop the Growth() function
             Growth();
@@ -52,10 +49,10 @@ public class plantGrowth : MonoBehaviour
         }
     }
 
-    // Public method to start the growth coroutine
-    public void StartGrowth2()
+    // Public method to stop growth
+    public void StopGrowth()
     {
-        StartCoroutine(GrowthCoroutine());
+        isGrowing = false;
     }
 
     public void Growth()
@@ -78,6 +75,16 @@ public class plantGrowth : MonoBehaviour
         {
             // Once it reaches the maximum growth, keep looping stage 4
             currentProgression = maxGrowth - 1;
+        }
+    }
+
+    public void ResetGrowth()
+    {
+        currentProgression = 0;
+
+        for (int i = 0; i < maxGrowth; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(i == 0);
         }
     }
 }

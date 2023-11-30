@@ -6,23 +6,36 @@ public class DestroyOnCollision : MonoBehaviour
 {
     public string targetTag;
     public GameObject flowerPrefab;
-    public bool plantGrowing = false;
+    private bool isCollisionHandled = false;
+
+    void Start()
+    {
+        // Disable the original flower prefab in the hierarchy
+        flowerPrefab.SetActive(false);
+    }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag(targetTag) && !plantGrowing)
+        if (!isCollisionHandled && collision.gameObject.CompareTag(targetTag))
         {
-            Destroy(gameObject);
-            plantGrowing = true;
+            isCollisionHandled = true;
 
             // Instantiate the flower prefab at the same position as the seed
             GameObject flower = Instantiate(flowerPrefab, transform.position, Quaternion.identity);
 
-            // Enable the growth script and start the growth coroutine
-            flower.GetComponent<plantGrowth>().enabled = true;
-            flower.GetComponent<plantGrowth>().StartGrowth2();
+            // Activate the clone immediately after instantiation
+            flower.SetActive(true);
 
-            //Debug.Log("Flower instantiated");
+            // Enable the growth script and start the growth coroutine
+            plantGrowth growthScript = flower.GetComponent<plantGrowth>();
+            growthScript.enabled = true;
+            growthScript.ResetGrowth();  // Reset growth progression
+            growthScript.StartGrowth();
+
+            // Destroy the seed after flower instantiation
+            Destroy(gameObject);
+
+            // Debug.Log("Flower instantiated");
         }
     }
 }
