@@ -12,6 +12,14 @@ TagManager:
   - Flower1
   - grid2
   - Flower2
+  - Flower3
+  - grid3
+  - Flower4
+  - grid4
+  - Flower5
+  - grid5
+  - Flower6
+  - grid6
   layers:
   - Default
   - TransparentFX

@@ -5,23 +5,23 @@ using UnityEngine;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
 
-public class ButtonPressed2 : MonoBehaviour
+public class ButtonPressed6 : MonoBehaviour
 {
     public GameObject objectToSpawn;
     public Transform BoxDispencer;
-    private GameObject button2;
+    private GameObject button6;
     private FlowerCounter flowerCounter;
 
     // Start is called before the first frame update
     void Start()
     {
-        // Find the Button2 GameObject by name
-        button2 = GameObject.Find("Button2");
+        // Find the Button6 GameObject by name
+        button6 = GameObject.Find("Button6");
 
-        // Deactivate Button2 at the beginning
-        if (button2 != null)
+        // Deactivate Button6 at the beginning
+        if (button6 != null)
         {
-            button2.SetActive(false);
+            button6.SetActive(false);
         }
 
         // Find and store reference to FlowerCounter script
@@ -31,12 +31,12 @@ public class ButtonPressed2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Check if flower1Count is more than 5 before activating Button2
-        if (flowerCounter != null && flowerCounter.flower1Count >= 5 && button2 != null)
-        {
-            button2.SetActive(true);
-        }
 
+        // Check if flower5Count is more than 5 before activating Button6
+        if (flowerCounter != null && flowerCounter.flower5Count >= 5 && button6 != null)
+        {
+            button6.SetActive(true);
+        }
     }
 
     public void OnPress(Hand hand)
