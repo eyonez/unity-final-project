@@ -31,8 +31,8 @@ public class ButtonPressed2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Check if flower1Count is more than 5 before activating Button2
-        if (flowerCounter != null && flowerCounter.flower1Count >= 5 && button2 != null)
+        // Check if flower1Count is more than 4 before activating Button2
+        if (flowerCounter != null && flowerCounter.flower1Count >= 4 && button2 != null)
         {
             button2.SetActive(true);
         }

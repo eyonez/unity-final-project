@@ -32,8 +32,8 @@ public class ButtonPressed6 : MonoBehaviour
     void Update()
     {
 
-        // Check if flower5Count is more than 5 before activating Button6
-        if (flowerCounter != null && flowerCounter.flower5Count >= 5 && button6 != null)
+        // Check if flower5Count is more than 3 before activating Button6
+        if (flowerCounter != null && flowerCounter.flower5Count >= 3 && button6 != null)
         {
             button6.SetActive(true);
         }

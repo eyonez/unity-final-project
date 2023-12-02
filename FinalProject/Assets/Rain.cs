@@ -7,7 +7,8 @@ public class Rain : MonoBehaviour
 
     private FlowerCounter flowerCounter;
     public GameObject Rain_Particle;
-    public GameObject bridge;
+    //public GameObject bridge;
+    public plantGrowth plantGrowthScript;
 
     private bool isRaining = false;
     private float rainDuration = 20f; // Set the rain duration in seconds
@@ -17,7 +18,7 @@ public class Rain : MonoBehaviour
     void Start()
     {
         Rain_Particle.gameObject.SetActive(false);
-        bridge.gameObject.SetActive(false);
+        //bridge.gameObject.SetActive(false);
 
         // Find and store reference to FlowerCounter script
         flowerCounter = FindObjectOfType<FlowerCounter>();
@@ -26,12 +27,12 @@ public class Rain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Check if flower2Count is more than 5 before activating Rain
+        // Check if flower2Count is more than 4 before activating Rain
         if (flowerCounter != null)
         {
             // Debug.Log("flower2Count: " + flowerCounter.flower2Count);  // Check the flower2Count value
 
-            if (flowerCounter.flower2Count >= 5)
+            if (flowerCounter.flower2Count >= 4)
             {
                 if (!isRaining)
                 {
@@ -74,6 +75,7 @@ public class Rain : MonoBehaviour
         Rain_Particle.gameObject.SetActive(false);
         isRaining = false;
         currentRainTime = 0f; // Reset the rain timer
-        bridge.gameObject.SetActive(true);
+        //bridge.gameObject.SetActive(true);
+        plantGrowthScript.StartGrowth();
     }
 }
