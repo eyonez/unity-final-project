@@ -10,7 +10,6 @@ public class FlowerCounter : MonoBehaviour
     public int flower3Count = 0;
     public int flower4Count = 0;
     public int flower5Count = 0;
-    public int flower6Count = 0;
 
     private void Start()
     {
@@ -93,7 +92,7 @@ public class FlowerCounter : MonoBehaviour
             plantGrowth flower4Script = flower4.GetComponent<plantGrowth>();
 
             // Check if the flower4 is in stage 4
-            if (flower4Script != null && flower4Script.currentProgression == 4)
+            if (flower4Script != null && flower4Script.currentProgression == 5)
             {
                 flower4Count++;
             }
@@ -121,25 +120,6 @@ public class FlowerCounter : MonoBehaviour
 
         //Debug.Log("flower5Count: " + flower5Count);
 
-
-        // Reset flower6Count at the beginning of each frame
-        flower6Count = 0;
-
-        // Find all GameObjects with the "Flower6" tag
-        GameObject[] flowers6 = GameObject.FindGameObjectsWithTag("Flower6");
-
-        foreach (GameObject flower6 in flowers6)
-        {
-            plantGrowth flower6Script = flower6.GetComponent<plantGrowth>();
-
-            // Check if the flower6 is in stage 4
-            if (flower6Script != null && flower6Script.currentProgression == 4)
-            {
-                flower6Count++;
-            }
-        }
-
-        //Debug.Log("flower6Count: " + flower6Count);
     }
 
 
