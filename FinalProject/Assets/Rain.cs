@@ -11,7 +11,7 @@ public class Rain : MonoBehaviour
 
     private bool isRaining = false;
     private bool checkRaining = false;
-    private float rainDuration = 20f; // Set the rain duration in seconds
+    private float rainDuration = 10f; // Set the rain duration in seconds
     private float currentRainTime = 0f;
 
     // Start is called before the first frame update
