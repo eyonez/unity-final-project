@@ -27,7 +27,7 @@ public class bridge2Growth : MonoBehaviour
         // Check if flower5Count is more than 0 before starting the bridge growing
         if (flowerCounter != null)
         {
-            if (flowerCounter.flower5Count >= 1)
+            if (flowerCounter.flower5Count >= 2)
             {
                 currentDelayTime += Time.deltaTime;
 

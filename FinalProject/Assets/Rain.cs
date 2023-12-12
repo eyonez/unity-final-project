@@ -33,7 +33,7 @@ public class Rain : MonoBehaviour
 
             if (!checkRaining)
             {
-                if (flowerCounter.flower2Count >= 1)
+                if (flowerCounter.flower2Count >= 3)
                 {
                     if (!isRaining) { 
                         StartRaining(); 
